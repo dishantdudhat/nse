@@ -727,12 +727,8 @@ app.get('/', (req, res) => {
 // });
 
 // Start the server and initialize data collection
-app.listen(PORT, async () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Access endpoints at: http://localhost:${PORT}/api/[nifty|tcs|reliance|bajfinance]`);
-  console.log(`Scheduled jobs: Start at 9:15:30 AM, End at 3:35:00 PM (Monday-Friday)`);
-  
-  // Try to load existing cookies
+
+ // Try to load existing cookies
   await loadCookies();
   
   // Check if current time is within trading hours
@@ -750,6 +746,5 @@ app.listen(PORT, async () => {
   } else {
     console.log("Current time is outside trading hours, no data collection started");
   }
-});
 
-
+export default app;
