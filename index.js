@@ -747,4 +747,5 @@ app.get('/', (req, res) => {
     console.log("Current time is outside trading hours, no data collection started");
   }
 
+
 export default app;
